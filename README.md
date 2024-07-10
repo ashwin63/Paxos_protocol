@@ -1,4 +1,4 @@
-# Paxos_consensus protocol with fault tolerant key value store
+# Paxos consensus protocol with fault tolerant key value store
 
 <b>Project Overview</b>
 This project was developed as a part of CSE Distributed Systems course. This was done in 2 parts. 

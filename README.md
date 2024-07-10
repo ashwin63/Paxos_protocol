@@ -7,6 +7,7 @@ Part 2: Implemented key values store on top of Part 1
 
 <b>Technical details</b>
 <b>Part 1:</b> 
+<div>
 Interfaces
 px = paxos.Make(peers []string, me int) // constructor
 px.Start(seq int, v interface{}) // start agreement on new instance
@@ -14,7 +15,7 @@ px.Status(seq int) (fate Fate, v interface{}) // get info about an instance
 px.Done(seq int) // ok to forget all instances <= seq
 px.Max() int // highest instance seq known, or -1
 px.Min() int // instances before this have been forgotten
-
+</div>
 An application calls `Make(peers,me)` to create a Paxos peer, which will be used in your next assignment. You don't need to implement the part that calls `Make(peers, me)` in this assignment. The `peers` argument contains the ports of all the peers (including this one), and the `me` argument is the index of this peer in the peers array. 
 
 `Start(seq,v)` asks Paxos to start agreement on instance seq, with proposed value v; `Start()` should return immediately, without waiting for agreement to complete. The application calls `Status(seq)` to find out whether the Paxos peer thinks the instance has reached agreement, and if so what the agreed value is. `Status()` should consult the local Paxos peer's state and return immediately; it should not communicate with other peers. The application may call `Status()` for old instances (but see the discussion of `Done()` below).

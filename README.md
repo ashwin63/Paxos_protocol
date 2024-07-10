@@ -56,7 +56,7 @@ acceptor's accept(n, v) handler:<br>
         reply accept_reject<br><br>
 
 
-<b>Part 2:M/b> <br><br>
+<b>Part 2:</b> <br><br>
 The key-value store includes three kinds of operations: Put, Get, and Append.<br>
 1. Put('k', 'a')<br>
 2. Append('k', 'bc')<br>
